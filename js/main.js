@@ -11,8 +11,12 @@
     let a = 'Bonjour';
 
     let celsius;
+    let message = 'Température en celsius :';
     do {
-      celsius = prompt('Température en celsius :');
+      celsius = prompt(message);
+      if(isNaN(celsius)){
+          message = 'Veuillez taper un nombre.';
+      }
     } while (isNaN(celsius));
 
     alert(`${celsius}°C = ${(celsius * 9 / 5 + 32).toFixed(2)}°F`);
